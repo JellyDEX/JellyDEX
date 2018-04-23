@@ -1,2 +1,2 @@
 # JellyDEX
-Official JellyDEX Exchange Source Code
+Welcome to JellyDEX.com, a scalable Decentralized Exchanged hosted on the Ethereum network.
