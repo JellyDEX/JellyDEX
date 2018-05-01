@@ -7,15 +7,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Trading Page for JellyDEX">
     <meta name="author" content="JellyDEX">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/jd-custom.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	
+	<!-- Custom styles for this page -->
+    <!--<link href="css/dashboard.css" rel="stylesheet"> -->
 	
 	<script src="js/jquery.js"></script>
 	
-	<!-- Custom styles for this page -->
-    <link href="css/dashboard.css" rel="stylesheet">
+	
+	<!-- edited web3.js for JellyDEX TODO: load at end of page?-->
+	<script src="js/web3.js"></script>
+	<script type="text/javascript">  if(typeof window.web3 !== "undefined" && typeof window.web3.currentProvider !== "undefined") {
+        var web3 = new Web3(window.web3.currentProvider);
+      } else {
+        var web3 = new Web3();
+      }
+	</script>
+	
 </head>
 <body style="padding-top: 65px;">
+
 	<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse shadow">
       <a class="navbar-brand" href="#">
 	    <img width="35" height="35" class="d-inline-block align-top" src="img/logo/jellydexlogo_small.png" alt="JellyDEX">
@@ -26,15 +37,21 @@
 	  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Decentralized Ethereum Token Exchange <span class="sr-only">(current)</span></a>
+		    <font size="4">
+              <a class="nav-link active" href="#">Decentralized Ethereum Token Exchange <span class="sr-only">(current)</span></a>
+			</font>
           </li>
         </ul>
       </div>
 	  <!-- right aligned navbar items -->
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav ml-auto" style="float: right">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Placeholder <span class="sr-only">(current)</span></a>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" style="color: rgba(255, 255, 255, 0.5);">
+			  <font size="2">
+                Next Nonce:
+			    <input class="form-control-sm" id="nonceText" type="text" style="width:50px" value="1" style="font-size: 14px">
+			    <span class="sr-only">(current)</span>
+		      </font>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Smart Contract</a>
@@ -43,7 +60,9 @@
             <a class="nav-link disabled" href="#">Disabled</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="AddressDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Dropdown</a>
+            <a class="nav-link dropdown-toggle" id="AddressDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="font-size: 14px">
+			  Addresses...
+			</a>
 			<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="AddressDropdown">
               <li><a class="dropdown-item" href="#">No Accout Available</a></li>
 			  <li role="separator" class="divider"></li>
@@ -56,6 +75,7 @@
         </ul>
       </div>
     </nav>
+	
 
     <div class="container-fluid">
 	  <!--<div class="row"></div>-->
@@ -507,6 +527,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/vendor/popper.min.js"></script>
+	<script src="js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Icons -->
@@ -546,6 +567,7 @@
         }
       });
     </script>
-
+	<!-- Finally, kick off the JellyDEX javascript! -->
+    <script type="text/javascript" src="js/jellydex_1.1.js"></script>
 </body>
 </html>
